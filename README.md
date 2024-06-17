@@ -33,17 +33,57 @@ Start server with :
 ```bash
 pnpm run dev
 ```
+## Install node
+
+<details>
+  <summary>Linux</summary>
+
+**Ubuntu :**
+
+```shell
+sudo apt install nodejs
+```
+
+**For other distribs**, tchek <https://github.com/nodesource/distributions/blob/master/README.md#installation-instructions>
+
+Ou <https://nodejs.org/en/download/package-manager/>
+
+</details>
+
+<details>
+  <summary>MacOS</summary>
+
+- Download directly : <https://nodejs.org/en/>
+
+Ou
+
+- [Install homebrew](https://brew.sh/)
+- Then node with this command : `brew install node`
+
+</details>
+
+<details>
+  <summary>Windows</summary>
+
+- Download directly : <https://nodejs.org/en/>
+
+Ou
+
+- [Installer chocolatey](https://chocolatey.org/)
+- Puis node avec la commande `choco install nodejs`
+
+</details>
 
 ## Techno used 
-    Express Server
-    Sequelize ORM
-    EJS
-    zod
-    express-session
-    bcrypt
-    dotenv
+- Express Server
+- Sequelize ORM
+- EJS
+- zod
+- express-session
+- bcrypt
+- dotenv
     
 ## Utils used
-    ESLint
-    Prettier
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
     
