@@ -1,0 +1,33 @@
+{
+  "name": "s05-oquiz-blue",
+  "version": "1.0.0",
+  "description": "## Planning saison",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "node --watch index.js",
+    "db:create": "psql -U matt -d oquiz -f ./data/create_tables.sql",
+    "db:seed": "psql -U matt -d oquiz -f ./data/populate_tables.sql",
+    "db:reset": "npm run db:create && npm run db:seed && npm run db:addrole"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.2",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.29.1"
+  }
+}

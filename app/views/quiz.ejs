@@ -1,0 +1,49 @@
+<!--  Include headers here -->
+<%- include('partials/header') %>
+
+<main class="container py-4">
+
+  <h1 class="text-center m-2"><%= quiz.title %></h1>
+
+  <h2 class="text-center m-2"><%= quiz.description %></h1>
+
+  <h2 class="small text-end">Par <%= quiz.author.lastname %> <%= quiz.author.firstname %></h2>
+
+  <h2 class="small text-end">Date de création : <%= quiz.createdAt.toLocaleDateString('fr-FR', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }) %></h2>
+
+  <h3>Thèmes</h3>
+  <ul class="mb-4 p-0">
+    <% quiz.tags.forEach(tag => { %>
+      <li class="badge bg-primary"><%= tag.name %></li>
+    <% }) %>
+  </ul>
+
+  <h3>Questions</h3>
+  <form>
+
+    <% quiz.questions.forEach(question => { %>
+      <span class="badge bg-info"><%= question.level.name %></span>
+      <p class="fw-bold mb-1"><%= question.description %></p>
+      <div class="mb-3 ms-2">
+        <% question.answers.forEach(answer => { %>
+          <div>
+            <input type="radio" id="<%= answer.id %>" name="<%= question.id %>" value="<%= answer.id %>">
+            <label for="<%= answer.id %>"><%= answer.description %></label>
+          </div>
+        <% }) %>
+      </div>
+      <p class="fst-italic text-secondary">Une anecdote wiki super intéressante pour la question 1</p>
+    <% }) %>
+
+  
+    <button type="submit" class="d-block mx-auto btn btn-primary mb-4">Envoyer</button>
+  </form>
+</main>
+
+<!--  Include footers here -->
+<%- include('partials/footer') %>
